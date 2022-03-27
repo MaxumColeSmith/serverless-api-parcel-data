@@ -1,6 +1,7 @@
 import type { AWS } from '@serverless/typescript';
 
 import hello from '@functions/hello';
+import getTotalParcelCount from '@functions/getTotalParcelCount';
 
 const serverlessConfiguration: AWS = {
   service: 'serverless-api-parcel-data',
@@ -19,7 +20,7 @@ const serverlessConfiguration: AWS = {
     },
   },
   // import the function via paths
-  functions: { hello },
+  functions: { hello, getTotalParcelCount },
   package: { individually: true },
   custom: {
     esbuild: {
